@@ -3,8 +3,8 @@
 @section('content')
 <div class="list-item" style="margin-bottom: 1.5em;">
     <span class="info">
-        @if ($county->badge)
-            <img src="{{ $county->badge }}" alt="{{ $county->name }} címere" class="badge-icon" style="width: 3em; height: 3em;">
+        @if ($county->badge_url)
+            <img src="{{ $county->badge_url }}" alt="{{ $county->name }} címere" class="badge-icon" style="width: 3em; height: 3em;">
         @endif
         <span>
             <h1 style="margin-bottom: 0.15em;">{{ $county->name }}</h1>

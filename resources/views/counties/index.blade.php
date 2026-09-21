@@ -27,8 +27,8 @@
     @foreach ($counties as $county)
     <li class="list-item">
         <span class="info">
-            @if ($county->badge)
-                <img src="{{ $county->badge }}" alt="{{ $county->name }} címere" class="badge-icon">
+            @if ($county->badge_url)
+                <img src="{{ $county->badge_url }}" alt="{{ $county->name }} címere" class="badge-icon">
             @endif
             <span class="name">{{ $county->name }}</span>
             <span class="meta">összlakosság: {{ number_format($county->cities_sum_population ?? 0, 0, ',', ' ') }} fő</span>

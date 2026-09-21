@@ -1,82 +1,102 @@
 [
     {
         "id": 1,
-        "name": "Budapest"
+        "name": "Budapest",
+        "badge": null
     },
     {
         "id": 2,
-        "name": "Bács-Kiskun"
+        "name": "Bács-Kiskun",
+        "badge": "images\/badges\/bacs-kiskun.jpg"
     },
     {
         "id": 3,
-        "name": "Baranya"
+        "name": "Baranya",
+        "badge": "images\/badges\/baranya.jpg"
     },
     {
         "id": 4,
-        "name": "Békés"
+        "name": "Békés",
+        "badge": "images\/badges\/bekes.jpg"
     },
     {
         "id": 5,
-        "name": "Borsod-Abaúj-Zemplén"
+        "name": "Borsod-Abaúj-Zemplén",
+        "badge": "images\/badges\/borsod-abauj-zemplen.jpg"
     },
     {
         "id": 6,
-        "name": "Csongrád"
+        "name": "Csongrád-Csanád",
+        "badge": "images\/badges\/csongrad-csanad.jpg"
     },
     {
         "id": 7,
-        "name": "Fejér"
+        "name": "Fejér",
+        "badge": "images\/badges\/fejer.jpg"
     },
     {
         "id": 8,
-        "name": "Győr-Moson-Sopron"
+        "name": "Győr-Moson-Sopron",
+        "badge": "images\/badges\/gyor-moson-sopron.jpg"
     },
     {
         "id": 9,
-        "name": "Hajdú-Bihar"
+        "name": "Hajdú-Bihar",
+        "badge": "images\/badges\/hajdu-bihar.jpg"
     },
     {
         "id": 10,
-        "name": "Heves"
+        "name": "Heves",
+        "badge": "images\/badges\/heves.jpg"
     },
     {
         "id": 11,
-        "name": "Jász-Nagykun-Szolnok"
+        "name": "Jász-Nagykun-Szolnok",
+        "badge": "images\/badges\/jasz-nagykun-szolnok.jpg"
     },
     {
         "id": 12,
-        "name": "Szepes"
+        "name": "Komárom-Esztergom",
+        "badge": "images\/badges\/komarom-esztergom.jpg"
     },
     {
         "id": 13,
-        "name": "Nógrád"
+        "name": "Nógrád",
+        "badge": "images\/badges\/nograd.jpg"
     },
     {
         "id": 14,
-        "name": "Pest"
+        "name": "Pest",
+        "badge": "images\/badges\/pest.jpg"
     },
     {
         "id": 15,
-        "name": "Somogy"
+        "name": "Somogy",
+        "badge": "images\/badges\/somogy.jpg"
     },
     {
         "id": 16,
-        "name": "Szabolcs-Szatmár-Bereg"
+        "name": "Szabolcs-Szatmár-Bereg",
+        "badge": "images\/badges\/szabolcs-szatmar-bereg.jpg"
     },
     {
         "id": 17,
-        "name": "Tolna"
+        "name": "Tolna",
+        "badge": "images\/badges\/tolna.jpg"
     },
     {
         "id": 18,
-        "name": "Vas"
+        "name": "Vas",
+        "badge": "images\/badges\/vas.jpg"
     },
     {
         "id": 19,
-        "name": "Veszprém"
+        "name": "Veszprém",
+        "badge": "images\/badges\/veszprem.jpg"
     },
     {
         "id": 20,
-        "name": "Zala"
+        "name": "Zala",
+        "badge": "images\/badges\/zala.jpg"
     }
 ]
