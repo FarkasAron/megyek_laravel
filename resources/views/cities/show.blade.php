@@ -9,6 +9,8 @@
     <li>Lakosság: {{ number_format($city->population, 0, ',', ' ') }} fő</li>
 </ul>
 
-<a href="{{ route('cities.edit', $city->id) }}" class="button">Szerkesztés</a>
-<a href="{{ route('cities.index') }}" class="button">Vissza</a>
+<span class="actions">
+    <a href="{{ route('cities.edit', $city->id) }}" class="button">Szerkesztés</a>
+    <a href="{{ route('cities.index') }}" class="button">Vissza</a>
+</span>
 @endsection

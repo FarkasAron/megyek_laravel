@@ -1,27 +1,35 @@
 @extends('layout')
 
 @section('content')
-<h1>"{{ $county->name }}" részletek</h1>
+<div class="list-item" style="margin-bottom: 1.5em;">
+    <span class="info">
+        @if ($county->badge)
+            <img src="{{ $county->badge }}" alt="{{ $county->name }} címere" class="badge-icon" style="width: 3em; height: 3em;">
+        @endif
+        <span>
+            <h1 style="margin-bottom: 0.15em;">{{ $county->name }}</h1>
+            <span class="meta">Összlakosság: {{ number_format($county->cities_sum_population ?? 0, 0, ',', ' ') }} fő</span>
+        </span>
+    </span>
+    <span class="actions">
+        <a href="{{ route('counties.edit', $county->id) }}" class="button">Szerkesztés</a>
+        <a href="{{ route('counties.index') }}" class="button">Vissza</a>
+    </span>
+</div>
 
-@if ($county->badge)
-    <img src="{{ $county->badge }}" alt="{{ $county->name }} címere" width="96" height="96">
-@endif
-
-<ul>
-    <li>Összlakosság: {{ number_format($county->cities_sum_population ?? 0, 0, ',', ' ') }} fő</li>
-</ul>
-
-<h2>Városok</h2>
+<h2 style="margin-bottom: 0.75em;">Városok</h2>
 <ul>
     @foreach ($cities as $city)
-    <li>
-        {{ $city->name }} ({{ number_format($city->population, 0, ',', ' ') }} fő)
-        <a href="{{ route('cities.show', $city->id) }}" class="button">Megjelenítés</a>
+    <li class="list-item">
+        <span class="info">
+            <span class="name">{{ $city->name }}</span>
+            <span class="meta">{{ number_format($city->population, 0, ',', ' ') }} fő</span>
+        </span>
+        <span class="actions">
+            <a href="{{ route('cities.show', $city->id) }}" class="button">Megjelenítés</a>
+        </span>
     </li>
     @endforeach
 </ul>
-{{ $cities->links() }}
-
-<a href="{{ route('counties.edit', $county->id) }}" class="button">Szerkesztés</a>
-<a href="{{ route('counties.index') }}" class="button">Vissza</a>
+{{ $cities->links('pagination.custom') }}
 @endsection

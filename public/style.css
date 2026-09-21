@@ -182,14 +182,73 @@ textarea {
 .actions {
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 0.75em;
     margin: 0.5em 0;
+}
+.actions form {
+    display: inline-flex;
+    margin: 0;
 }
 .danger {
     background-color: var(--danger);
 }
 .danger:hover {
     background-color: var(--danger-dark);
+}
+
+/* filter/search bar above listings */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75em;
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid var(--border);
+}
+.filter-bar input,
+.filter-bar select {
+    flex: 1 1 12em;
+}
+.filter-bar a {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+.filter-bar a:hover {
+    color: var(--primary);
+}
+
+/* list rows (cities/counties index) */
+main ul li.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75em 1.5em;
+}
+.list-item .info {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    min-width: 0;
+}
+.list-item .info .name {
+    font-weight: 600;
+}
+.list-item .info .meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* county badge thumbnail */
+.badge-icon {
+    width: 2em;
+    height: 2em;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    background-color: var(--primary-light);
+    flex-shrink: 0;
 }
 
 /* alerts */
@@ -234,16 +293,40 @@ textarea {
 }
 
 #paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.35em;
     margin: 2em auto 0 auto;
     width: fit-content;
-    text-align: center;
-    color: var(--text-muted);
 }
-#paginator svg {
-    width: 1em;
-    height: 1em;
-    margin: 0 0.5em;
-    cursor: pointer;
+#paginator .page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25em;
+    height: 2.25em;
+    padding: 0 0.5em;
+    border-radius: var(--radius-sm);
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+#paginator a.page-link:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+}
+#paginator .page-link.current {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+#paginator .page-link.disabled {
+    color: var(--text-muted);
+    opacity: 0.5;
 }
 
 @media (max-width: 640px) {
