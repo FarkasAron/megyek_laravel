@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
@@ -10,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // MariaDB 10.4 does not support the native RENAME COLUMN syntax
-        // (added in 10.5.2), so CHANGE COLUMN is used instead. The existing
-        // idx_city index automatically follows the column rename.
-        DB::statement('ALTER TABLE cities CHANGE city name VARCHAR(50) NOT NULL');
+        Schema::table('cities', function (Blueprint $table) {
+            $table->renameColumn('city', 'name');
+        });
     }
 
     /**
@@ -21,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        DB::statement('ALTER TABLE cities CHANGE name city VARCHAR(50) NOT NULL');
+        Schema::table('cities', function (Blueprint $table) {
+            $table->renameColumn('name', 'city');
+        });
     }
 };

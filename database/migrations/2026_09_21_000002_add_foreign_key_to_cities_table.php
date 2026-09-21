@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -12,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // id_county was a plain INT, but counties.id is a BIGINT (and, on this
-        // server, signed rather than unsigned) - types must match exactly
-        // before MySQL/MariaDB will accept a foreign key.
-        DB::statement('ALTER TABLE cities MODIFY id_county BIGINT NOT NULL');
+        // id_county was a plain INT, but counties.id (from $table->id()) is
+        // an unsigned BIGINT - types must match exactly before MySQL/MariaDB
+        // will accept a foreign key on this column.
+        Schema::table('cities', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_county')->change();
+        });
 
         Schema::table('cities', function (Blueprint $table) {
             $table->foreign('id_county')->references('id')->on('counties');
@@ -31,6 +32,8 @@ return new class extends Migration
             $table->dropForeign(['id_county']);
         });
 
-        DB::statement('ALTER TABLE cities MODIFY id_county INT NOT NULL');
+        Schema::table('cities', function (Blueprint $table) {
+            $table->integer('id_county')->change();
+        });
     }
 };
